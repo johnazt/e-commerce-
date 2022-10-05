@@ -28,3 +28,18 @@
     color: #000;
     margin-bottom: 1em;
 }
+/* Products details */
+.price-product {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+.btn-product-detail {
+    border: transparent;
+    padding: .2em 1em;
+    background-color: #ccc;
+    font-size: 1.2em;
+}
+.font-weight {
+    font-weight: 700;
+    margin-bottom: 1em;
+}

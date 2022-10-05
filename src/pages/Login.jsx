@@ -35,10 +35,10 @@ const Login = () => {
 				<div className="test-data">
 					<h5>Test Data</h5>
 					<div className="test-data-email">
-						<EmailIcon /> max@gmail.com
+						<EmailIcon /> john@gmail.com
 					</div>
 					<div className="test-data-password">
-						<KeyIcon /> pass1234
+						<KeyIcon /> john1234
 					</div>
 				</div>
 				<Form onSubmit={handleSubmit(submit)}>
