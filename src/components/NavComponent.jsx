@@ -1,34 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Navbar, Nav, Container, Offcanvas } from "react-bootstrap";
+import { Navbar, Nav, Container } from "react-bootstrap";
+import SideBar from "./SideBar";
 
 const NavComponent = () => {
+	const [show, setShow] = useState(false);
+
+	const handleClose = () => setShow(false);
+	const handleShow = () => setShow(true);
+
 	return (
-		<Navbar bg="light" expand="md" className="mb-3">
-			<Container fluid>
-				<Navbar.Brand to="/" as={Link}>
+		<Navbar bg="light" className="mb-3">
+			<Container fluid className="mx-2" >
+				<Navbar.Brand className="text-sm-start" to="/" as={Link}>
 					E-Commerce
 				</Navbar.Brand>
-				<Navbar.Toggle />
-				<Navbar.Offcanvas placement="end">
-					<Offcanvas.Header closeButton>
-						<Offcanvas.Title>Navegation Bar</Offcanvas.Title>
-					</Offcanvas.Header>
-					<Offcanvas.Body>
-						<Nav className="justify-content-end flex-grow-1 pe-3">
-							<Nav.Link to="/purchases" as={Link}>
-								Purchases
-							</Nav.Link>
-							<Nav.Link href="#action2">Shop</Nav.Link>
-							<Nav.Link to="/login" as={Link}>
-								Log In
-							</Nav.Link>
-							<Nav.Link onClick={() => localStorage.setItem("token", "")}>
-								Log Out
-							</Nav.Link>
-						</Nav>
-					</Offcanvas.Body>
-				</Navbar.Offcanvas>
+				<Nav>
+					<Nav.Link to="/login" as={Link}>
+						Log In
+					</Nav.Link>
+					<Nav.Link to="/purchases" as={Link}>
+						Purchases
+					</Nav.Link>
+					<Nav.Link onClick={() => handleShow()}>Shop</Nav.Link>
+					<SideBar show={show} handleClose={handleClose} />
+				</Nav>
 			</Container>
 		</Navbar>
 	);

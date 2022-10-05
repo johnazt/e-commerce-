@@ -15,9 +15,9 @@ const Product = () => {
 	return (
 		<Row>
 			<Col>
-				<h1>{productId.category.name}</h1>
-				<h3>{productId.title}</h3>
-				<img src={productId.productImgs} className="img-fluid" />
+				<h1>{productId?.category.name}</h1>
+				<h3>{productId?.title}</h3>
+				<img src={productId?.productImgs} className="img-fluid" />
 			</Col>
 			<Col lg={3}>
 				<ListGroup>

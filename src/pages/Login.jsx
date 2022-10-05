@@ -62,6 +62,9 @@ const Login = () => {
 					<Button variant="primary" type="submit" style={{ width: "100%" }}>
 						Log In
 					</Button>
+					{/* <Nav.Link onClick={() => localStorage.setItem("token", "")}>
+								Log Out
+							</Nav.Link> */}
 				</Form>
 			</div>
 		</div>
