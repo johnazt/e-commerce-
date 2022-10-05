@@ -11,6 +11,7 @@ import { getProductsThunk } from "./store/slices/products.slice";
 import { useEffect } from "react";
 import { Container } from "react-bootstrap";
 import ProtectedRoutes from "./components/ProtectedRoutes";
+import Footer from "./components/Footer";
 
 function App() {
 	const dispatch = useDispatch();
@@ -35,6 +36,7 @@ function App() {
 					</Route>
 				</Routes>
 			</Container>
+			<Footer/>
 		</HashRouter>
 	);
 }
