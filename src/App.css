@@ -1,0 +1,29 @@
+.card-product {
+    border-radius: 15px;
+    min-height: 400px;
+    max-width: 450px;
+}
+.card-product__img {
+    object-fit: contain;
+    max-height: 250px;
+    border-radius: 15px 15px 0 0;
+}
+.btn-product {
+    border-radius: 50%;
+    aspect-ratio: 1;
+}
+.log-in {
+    box-shadow: 1px 1px 5px 2px #ccc;
+    padding: 2em;
+    max-width: 360px;
+    margin: 0 auto;
+}
+.login-title {
+    font-size: 1.5rem;
+}
+.test-data {
+    background-color: rgb(170, 191, 246);
+    padding: 1em;
+    color: #000;
+    margin-bottom: 1em;
+}
