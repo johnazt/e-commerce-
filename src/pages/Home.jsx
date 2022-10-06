@@ -128,9 +128,9 @@ const Home = () => {
 											</Card.Text>
 										</div>
 										<Button
-											className="btn-product"
+											className="btn-product btn-bg"
 											size="sm"
-											style={{ backgroundColor: "#aaa" }}
+											onClick={() => navigate(`/shop/${product.id}`)}
 										>
 											<LocalGroceryStoreIcon fontSize="medium" />
 										</Button>

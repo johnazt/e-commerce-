@@ -49,9 +49,9 @@ const Purchases = () => {
 								sx={{ border: "1px solid #ccc", marginBottom: "5em" }}
 							>
 								<TableHead>
-									<TableRow sx={{ backgroundColor: "#ccc" }}>
+									<TableRow className="bg-table">
 										<TableCell
-											className="purchase-date"
+											className="purchase-date white-color"
 
 											sx={{
 												fontWeight: "600",
@@ -61,8 +61,8 @@ const Purchases = () => {
 										>
 											{date.toLocaleDateString(undefined, options)}
 										</TableCell>
-										<TableCell align="center">Quantity</TableCell>
-										<TableCell align="center">Price</TableCell>
+										<TableCell className="white-color"  align="center">Quantity</TableCell>
+										<TableCell className="white-color" align="center">Price</TableCell>
 									</TableRow>
 								</TableHead>
 								<TableBody>

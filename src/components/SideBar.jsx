@@ -29,7 +29,7 @@ const SideBar = ({ show, handleClose }) => {
 						>
 							<div className="d-flex justify-content-between">
 								<small>{product.brand}</small>
-								<DeleteIcon onClick={() => dispatch(deleteProductCartThunk(product.id))} className="delete-product" color="error" />
+								<DeleteIcon onClick={() => dispatch(deleteProductCartThunk(product.id))} className="delete-product details-color" />
 							</div>
 							<Link
 								style={{ textDecoration: "none" }}
@@ -63,7 +63,7 @@ const SideBar = ({ show, handleClose }) => {
 					</div>
 					<Button
 						onClick={() => dispatch(checkoutCartThunk())}
-						className="w-100"
+						className="w-100 btn-bg"
 					>
 						Checkout
 					</Button>

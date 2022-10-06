@@ -4,6 +4,7 @@ import { Navbar, Nav, Container } from "react-bootstrap";
 import PersonIcon from "@mui/icons-material/Person";
 import StoreIcon from "@mui/icons-material/Store";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import ShopIcon from "@mui/icons-material/Shop";
 import SideBar from "./SideBar";
 import "../index.css";
 
@@ -15,7 +16,12 @@ const NavComponent = () => {
 	return (
 		<Navbar className="mb-3 px-sm-1 px-lg-4 nav-bg">
 			<Container fluid className="mx-2">
-				<Navbar.Brand className="text-sm-start navbar-brand" to="/" as={Link}>
+				<Navbar.Brand
+					className="text-sm-start navbar-brand d-flex gap-2 align-items-center"
+					to="/"
+					as={Link}
+				>
+					<ShopIcon />
 					E-Commerce
 				</Navbar.Brand>
 				<Nav className="gap-lg-5">

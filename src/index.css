@@ -29,3 +29,18 @@
   left: 0;
   right: 0;
 }
+.btn-bg {
+	background-color: var(--details-color)!important;
+}
+.btn-count {
+	background-color: var(--primary-color);
+}
+.bg-table {
+	background-color: var(--secundary-color);
+}
+.white-color {
+	color: var(--white)!important;
+}
+.details-color{
+	color: var(--details-color);
+}

@@ -19,7 +19,7 @@ export const getCartThunk = () => dispatch => {
 		.get("https://ecommerce-api-react.herokuapp.com/api/v1/cart", getConfig())
 		.then(res => dispatch(setCart(res.data.data.cart.products)))
 		.catch(error => {
-			if(error.response.status === 404){
+			if (error.response.status === 404) {
 				dispatch(setCart({}));
 			}
 		})

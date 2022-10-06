@@ -75,21 +75,21 @@ const Product = () => {
 						<div>
 							<div className="font-weight text-lg-start text-end">Quantity</div>
 							<button
-								className="btn-product-detail"
+								className="btn-product-detail btn-count"
 								onClick={() => setCount(count - 1)}
 							>
 								-
 							</button>
 							<span className="mx-4">{count}</span>
 							<button
-								className="btn-product-detail"
+								className="btn-product-detail btn-count"
 								onClick={() => setCount(count + 1)}
 							>
 								+
 							</button>
 						</div>
 					</div>
-					<Button onClick={addProduct}>Add to cart</Button>
+					<Button className="btn-bg" onClick={addProduct}>Add to cart</Button>
 				</Col>
 			</Row>
 
@@ -118,7 +118,7 @@ const Product = () => {
 										</Card.Text>
 									</div>
 									<Button
-										className="btn-product"
+										className="btn-product btn-bg btn-count"
 										size="sm"
 										style={{ backgroundColor: "#aaa" }}
 									>
