@@ -58,7 +58,7 @@ const Home = () => {
 			<Col lg={2}>
 				<Accordion defaultActiveKey="0" alwaysOpen>
 					<Accordion.Item eventKey="0">
-						<Accordion.Header >Categories</Accordion.Header>
+						<Accordion.Header>Categories</Accordion.Header>
 						<Accordion.Body>
 							<ListGroup>
 								{category.map(elem => (
@@ -93,20 +93,15 @@ const Home = () => {
 								backgroundColor: "#f7f7f9",
 								height: "100%",
 								padding: ".1em",
-
 							}}
-							
 						/>
 					</InputGroup>
 				</Row>
 
-				<Row xs={1} md={2} lg={3} className="g-5 my-5 ">
+				<Row xs={1} sm={2} md={3} xl={3} className="g-5 my-5 ">
 					{filterProduct.map(product => (
 						<Col key={product.id} className="md-4">
-							<Card
-								className="card-product"
-								
-							>
+							<Card className="card-product">
 								{!loaderImg && <ProductLoading />}
 								<Card.Img
 									variant="top"
