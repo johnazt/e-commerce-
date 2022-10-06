@@ -20,8 +20,8 @@ const SideBar = ({ show, handleClose }) => {
 			<Offcanvas.Header closeButton>
 				<Offcanvas.Title className="ms-3 mt-3">Shop Cart</Offcanvas.Title>
 			</Offcanvas.Header>
-			<Offcanvas.Body>
-				<div>
+			<Offcanvas.Body >
+				<div >
 					{cart.map(product => (
 						<div key={product.id} className="d-flex flex-column px-3 mb-3">
 							<div className="d-flex justify-content-between">
@@ -37,7 +37,7 @@ const SideBar = ({ show, handleClose }) => {
 							<span className="quantity-shop">
 								{product.productsInCart.quantity}
 							</span>
-							<div className="align-self-end">
+							<div className="align-self-end"  >
 								<small>Total:</small>{" "}
 								<span className="font-weight price-product">
 									$ {product.price * product.productsInCart.quantity}

@@ -25,7 +25,7 @@ function App() {
 		<HashRouter>
 			<NavComponent />
 			{isLoading && <Loading />}
-			<Container fluid className="mt-5 px-5">
+			<Container fluid className="mt-5 px-lg-5 px-3" style={{minHeight:"100vh"}}>
 				<Routes>
 					<Route path="/login" element={<Login />} />
 					<Route path="/" element={<Home />} />

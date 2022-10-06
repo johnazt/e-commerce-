@@ -22,15 +22,13 @@ const Purchases = () => {
 		dispatch(getPurchasesThunk());
 	}, []);
 
-	// console.log(purchases)
-
 	return (
 		<div>
 			<span>
 				<span style={{ cursor: "pointer" }} onClick={() => navigate("/")}>
 					Home{" "}
 				</span>
-				<CircleIcon fontSize="small" /> purchases
+				<CircleIcon fontSize="1em" /> purchases
 			</span>
 			<Box my={4}>
 				<h4>My purchases</h4>
@@ -53,8 +51,9 @@ const Purchases = () => {
 								<TableHead>
 									<TableRow sx={{ backgroundColor: "#ccc" }}>
 										<TableCell
+											className="purchase-date"
+
 											sx={{
-												fontSize: "1.3em",
 												fontWeight: "600",
 												padding: "1em .7em",
 												display: "block",
@@ -63,7 +62,7 @@ const Purchases = () => {
 											{date.toLocaleDateString(undefined, options)}
 										</TableCell>
 										<TableCell align="center">Quantity</TableCell>
-										<TableCell align="center"  >Price</TableCell>
+										<TableCell align="center">Price</TableCell>
 									</TableRow>
 								</TableHead>
 								<TableBody>
@@ -79,7 +78,7 @@ const Purchases = () => {
 											<TableCell align="center">
 												{product.productsInCart.quantity}
 											</TableCell>
-											<TableCell align="center" sx={{fontWeight:"700"}} >
+											<TableCell align="center" sx={{ fontWeight: "700", paddingX:"0" }}>
 												$ {product.price * product.productsInCart.quantity}
 											</TableCell>
 										</TableRow>

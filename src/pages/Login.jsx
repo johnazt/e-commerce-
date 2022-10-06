@@ -29,43 +29,55 @@ const Login = () => {
 	return (
 		<div>
 			<div className="log-in">
-				<p className="login-title">
-					Welcome! Enter your email and password to continue
-				</p>
-				<div className="test-data">
-					<h5>Test Data</h5>
-					<div className="test-data-email">
-						<EmailIcon /> john@gmail.com
-					</div>
-					<div className="test-data-password">
-						<KeyIcon /> john1234
-					</div>
-				</div>
-				<Form onSubmit={handleSubmit(submit)}>
-					<Form.Group controlId="formBasicEmail">
-						<Form.Label>Email</Form.Label>
-						<Form.Control
-							{...register("email")}
-							type="email"
-							placeholder="Enter email"
-						/>
-					</Form.Group>
+				{!localStorage.getItem("token", "") ? (
+					<>
+						<p className="login-title">
+							Welcome! Enter your email and password to continue
+						</p>
+						<div className="test-data">
+							<h5>Test Data</h5>
+							<div className="test-data-email">
+								<EmailIcon /> john@gmail.com
+							</div>
+							<div className="test-data-password">
+								<KeyIcon /> john1234
+							</div>
+						</div>
+						<Form onSubmit={handleSubmit(submit)}>
+							<Form.Group controlId="formBasicEmail">
+								<Form.Label>Email</Form.Label>
+								<Form.Control
+									{...register("email")}
+									type="email"
+									placeholder="Enter email"
+								/>
+							</Form.Group>
 
-					<Form.Group className="mb-5" controlId="formBasicPassword">
-						<Form.Label>Password</Form.Label>
-						<Form.Control
-							{...register("password")}
-							type="password"
-							placeholder="Password"
-						/>
-					</Form.Group>
-					<Button variant="primary" type="submit" style={{ width: "100%" }}>
-						Log In
-					</Button>
-					{/* <Nav.Link onClick={() => localStorage.setItem("token", "")}>
-								Log Out
-							</Nav.Link> */}
-				</Form>
+							<Form.Group className="mb-5" controlId="formBasicPassword">
+								<Form.Label>Password</Form.Label>
+								<Form.Control
+									{...register("password")}
+									type="password"
+									placeholder="Password"
+								/>
+							</Form.Group>
+							<Button variant="primary" type="submit" style={{ width: "100%" }}>
+								Log In
+							</Button>
+						</Form>
+					</>
+				) : (
+					<div className="d-flex justify-content-center">
+						<Button
+							onClick={() => {
+								localStorage.setItem("token", "");
+								navigate("/");
+							}}
+						>
+							Log Out
+						</Button>
+					</div>
+				)}
 			</div>
 		</div>
 	);

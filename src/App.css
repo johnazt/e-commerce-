@@ -1,66 +1,78 @@
 .card-product {
-    border-radius: 15px;
-    min-height: 400px;
-    max-width: 450px;
+	border-radius: 15px;
+	min-height: 400px;
+	max-width: 450px;
 }
 .card-product__img {
-    object-fit: contain;
-    max-height: 250px;
-    border-radius: 15px 15px 0 0;
+	object-fit: contain;
+	max-height: 250px;
+	border-radius: 15px 15px 0 0;
 }
 .btn-product {
-    border-radius: 50%;
-    aspect-ratio: 1;
+	border-radius: 50%;
+	aspect-ratio: 1;
 }
 .log-in {
-    box-shadow: 1px 1px 5px 2px #ccc;
-    padding: 2em;
-    max-width: 360px;
-    margin: 0 auto;
-    margin-bottom: 4em;
+	box-shadow: 1px 1px 5px 2px #ccc;
+	padding: 1.3em;
+	max-width: 350px;
+	margin: 0 auto;
+	margin-bottom: 4em;
 }
 .login-title {
-    font-size: 1.5rem;
+	font-size: 1.2rem;
 }
 .test-data {
-    background-color: rgb(170, 191, 246);
-    padding: 1em;
-    color: #000;
-    margin-bottom: 1em;
+	background-color: rgb(170, 191, 246);
+	padding: 1em;
+	color: #000;
+	margin-bottom: 1em;
 }
 /* Products details */
 .price-product {
-    font-weight: 700;
-    font-size: 1.3rem;
+	font-weight: 700;
+	font-size: 1.3rem;
 }
 .btn-product-detail {
-    border: transparent;
-    padding: .2em 1em;
-    background-color: #ccc;
-    font-size: 1.2em;
+	border: transparent;
+	padding: 0.2em 1em;
+	background-color: #ccc;
+	font-size: 1.2em;
 }
 .font-weight {
-    font-weight: 700;
-    margin-bottom: 1em;
+	font-weight: 700;
+	margin-bottom: 1em;
 }
 /* Shop cart */
 .quantity-shop {
-    border: 1px solid #ccc;
-    width: 70px;
-    padding: .5em;
-    text-align: center;
-    border-radius: 5px;
+	border: 1px solid #ccc;
+	width: 70px;
+	padding: 0.5em;
+	text-align: center;
+	border-radius: 5px;
 }
 .delete-product {
-    cursor: pointer;
+	cursor: pointer;
 }
 .total-product {
-    position: absolute;
-    bottom: 3em;
-    left: 0;
-    right: 0;
+	position: absolute;
+	bottom: 3em;
+	left: 0;
+	right: 0;
+    background-color: #fff;
 }
 .text-price {
-    font-size: 1.3rem;
-    font-weight: 700;
+	font-size: 1.3rem;
+	font-weight: 700;
+}
+
+@media screen and (min-width: 750px) {
+	.log-in {
+		min-width: 400px;
+        margin: 6em auto;
+        padding: 2em;
+	}
+    .login-title {
+        font-size: 1.5rem;
+    }
 }

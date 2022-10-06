@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Navbar, Nav, Container } from "react-bootstrap";
-import PersonIcon from '@mui/icons-material/Person';
-import StoreIcon from '@mui/icons-material/Store';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import PersonIcon from "@mui/icons-material/Person";
+import StoreIcon from "@mui/icons-material/Store";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import SideBar from "./SideBar";
 
 const NavComponent = () => {
@@ -13,20 +13,23 @@ const NavComponent = () => {
 	const handleShow = () => setShow(true);
 
 	return (
-		<Navbar bg="light" className="mb-3 px-sm-1">
-			<Container fluid className="mx-2" >
+		<Navbar bg="light" className="mb-3 px-sm-1 px-lg-4">
+			<Container fluid className="mx-2">
 				<Navbar.Brand className="text-sm-start" to="/" as={Link}>
 					E-Commerce
 				</Navbar.Brand>
-				<Nav className="">
+				<Nav className="gap-lg-5">
 					<Nav.Link to="/login" as={Link}>
-						<PersonIcon/>
+						<PersonIcon />
 					</Nav.Link>
 					<Nav.Link to="/purchases" as={Link}>
-						<StoreIcon/>
+						<StoreIcon />
 					</Nav.Link>
-					<Nav.Link onClick={() => handleShow()}><ShoppingCartIcon/></Nav.Link>
+					<Nav.Link onClick={() => handleShow()}>
+						<ShoppingCartIcon />
+					</Nav.Link>
 					<SideBar show={show} handleClose={handleClose} />
+					
 				</Nav>
 			</Container>
 		</Navbar>
