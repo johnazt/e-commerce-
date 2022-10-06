@@ -31,7 +31,7 @@
 /* Products details */
 .price-product {
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 .btn-product-detail {
     border: transparent;
@@ -42,4 +42,25 @@
 .font-weight {
     font-weight: 700;
     margin-bottom: 1em;
+}
+/* Shop cart */
+.quantity-shop {
+    border: 1px solid #ccc;
+    width: 70px;
+    padding: .5em;
+    text-align: center;
+    border-radius: 5px;
+}
+.delete-product {
+    cursor: pointer;
+}
+.total-product {
+    position: absolute;
+    bottom: 3em;
+    left: 0;
+    right: 0;
+}
+.text-price {
+    font-size: 1.3rem;
+    font-weight: 700;
 }

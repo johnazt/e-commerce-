@@ -13,12 +13,12 @@ const NavComponent = () => {
 	const handleShow = () => setShow(true);
 
 	return (
-		<Navbar bg="light" className="mb-3 px-4">
+		<Navbar bg="light" className="mb-3 px-sm-1">
 			<Container fluid className="mx-2" >
 				<Navbar.Brand className="text-sm-start" to="/" as={Link}>
 					E-Commerce
 				</Navbar.Brand>
-				<Nav className="gap-5">
+				<Nav className="">
 					<Nav.Link to="/login" as={Link}>
 						<PersonIcon/>
 					</Nav.Link>

@@ -105,7 +105,7 @@ const Home = () => {
 						<Col key={product.id} className="md-4">
 							<Card
 								className="card-product"
-								onClick={() => navigate(`/shop/${product.id}`)}
+								
 							>
 								{!loaderImg && <ProductLoading />}
 								<Card.Img
@@ -113,6 +113,7 @@ const Home = () => {
 									className="img-thumbnail p-3 card-product__img"
 									src={product.productImgs}
 									onLoad={() => setLoaderImg(true)}
+									onClick={() => navigate(`/shop/${product.id}`)}
 								/>
 
 								<Card.Body className="pb-0">
