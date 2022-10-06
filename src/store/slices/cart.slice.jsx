@@ -18,7 +18,12 @@ export const getCartThunk = () => dispatch => {
 	return axios
 		.get("https://ecommerce-api-react.herokuapp.com/api/v1/cart", getConfig())
 		.then(res => dispatch(setCart(res.data.data.cart.products)))
-		.catch(error => console.log(error.response))
+		.catch(error => {
+			if(error.response.status === 404){
+				dispatch(setCart({}));
+			}
+		})
+
 		.finally(() => dispatch(setIsLoading(false)));
 };
 

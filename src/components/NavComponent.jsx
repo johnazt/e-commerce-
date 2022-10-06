@@ -5,12 +5,10 @@ import PersonIcon from "@mui/icons-material/Person";
 import StoreIcon from "@mui/icons-material/Store";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import SideBar from "./SideBar";
-import "../index.css"
-
+import "../index.css";
 
 const NavComponent = () => {
 	const [show, setShow] = useState(false);
-
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
 
@@ -28,10 +26,9 @@ const NavComponent = () => {
 						<StoreIcon className="nav-link-color" />
 					</Nav.Link>
 					<Nav.Link onClick={() => handleShow()}>
-						<ShoppingCartIcon className="nav-link-color"/>
+						<ShoppingCartIcon className="nav-link-color" />
 					</Nav.Link>
 					<SideBar show={show} handleClose={handleClose} />
-					
 				</Nav>
 			</Container>
 		</Navbar>
