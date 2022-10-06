@@ -40,15 +40,23 @@ const Product = () => {
 			</span>
 
 			<Row className="mb-5">
-				<Col className="d-flex align-items-center justify-content-center">
-					<Carousel slide={false} interval="7000" variant="dark">
+				<Col
+					sm={12}
+					lg={6}
+					className="d-flex align-items-center justify-content-center"
+				>
+					<Carousel slide={false} interval="5000" variant="dark">
 						{productId?.productImgs.map((item, index) => (
 							<Carousel.Item key={index}>
 								<img
-									className="d-block w-100"
+									className="d-block w-100 p-5"
 									src={item}
 									alt="First slide"
-									style={{ maxHeight: "450px", padding: "3em 6em" }}
+									style={{
+										minHeight: "350px",
+										maxHeight: "400px",
+										objectFit: "contain",
+									}}
 								/>
 								<Carousel.Caption></Carousel.Caption>
 							</Carousel.Item>
@@ -56,8 +64,8 @@ const Product = () => {
 					</Carousel>
 				</Col>
 
-				<Col className="d-flex flex-column justify-content-center gap-5 p-5">
-					<h4>{productId?.title}</h4>
+				<Col className="d-flex flex-column justify-content-center gap-lg-5 gap-5 p-4">
+					<h4 className="title-similar">{productId?.title}</h4>
 					<div>{productId?.description}</div>
 					<div style={{ display: "flex", justifyContent: "space-between" }}>
 						<div>
@@ -65,7 +73,7 @@ const Product = () => {
 							<span className="price-product">${productId?.price}</span>
 						</div>
 						<div>
-							<div className="font-weight">Quantity</div>
+							<div className="font-weight text-lg-start text-end">Quantity</div>
 							<button
 								className="btn-product-detail"
 								onClick={() => setCount(count - 1)}
@@ -86,10 +94,10 @@ const Product = () => {
 			</Row>
 
 			<Row className="gap-small-5 justify-content-center mb-5">
-				<h4>Discover similar items</h4>
+				<h4 className="title-similar">Discover similar items</h4>
 
 				{productsCategoryFilter.map(item => (
-					<Col lg={3} className="my-5" key={item.id}>
+					<Col lg={3} className="my-lg-5 p-lg-2 p-4" key={item.id}>
 						<Card
 							className="card-product"
 							onClick={() => navigate(`/shop/${item.id}`)}

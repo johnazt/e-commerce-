@@ -12,7 +12,7 @@ import { useEffect } from "react";
 import { Container } from "react-bootstrap";
 import ProtectedRoutes from "./components/ProtectedRoutes";
 import Footer from "./components/Footer";
-
+import "./index.css";
 function App() {
 	const dispatch = useDispatch();
 	const isLoading = useSelector(state => state.isLoading);
@@ -24,8 +24,12 @@ function App() {
 	return (
 		<HashRouter>
 			<NavComponent />
-			{isLoading && <Loading />}
-			<Container fluid className="mt-5 px-lg-5 px-3" style={{minHeight:"100vh"}}>
+			<Container
+				fluid
+				className="mt-5 px-lg-5 px-3"
+				style={{ paddingBottom: "15em" }}
+			>
+				{isLoading && <Loading />}
 				<Routes>
 					<Route path="/login" element={<Login />} />
 					<Route path="/" element={<Home />} />
@@ -36,7 +40,7 @@ function App() {
 					</Route>
 				</Routes>
 			</Container>
-			<Footer/>
+			<Footer />
 		</HashRouter>
 	);
 }
