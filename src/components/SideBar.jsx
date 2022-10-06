@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Button, Offcanvas } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { getCartThunk } from "../store/slices/cart.slice";
+import { checkoutCartThunk, deleteProductCartThunk, getCartThunk } from "../store/slices/cart.slice";
 import DeleteIcon from "@mui/icons-material/Delete";
 
 const SideBar = ({ show, handleClose }) => {
@@ -20,13 +20,16 @@ const SideBar = ({ show, handleClose }) => {
 			<Offcanvas.Header closeButton>
 				<Offcanvas.Title className="ms-3 mt-3">Shop Cart</Offcanvas.Title>
 			</Offcanvas.Header>
-			<Offcanvas.Body >
-				<div >
+			<Offcanvas.Body>
+				<div style={{ height: "500px", overflow: "auto" }}>
 					{cart.map(product => (
-						<div key={product.id} className="d-flex flex-column px-3 mb-3">
+						<div
+							key={product.id}
+							className="d-flex flex-column p-3 mb-4  border-bottom"
+						>
 							<div className="d-flex justify-content-between">
 								<small>{product.brand}</small>
-								<DeleteIcon className="delete-product" color="error" />
+								<DeleteIcon onClick={() => dispatch(deleteProductCartThunk(product.id))} className="delete-product" color="error" />
 							</div>
 							<Link
 								style={{ textDecoration: "none" }}
@@ -37,7 +40,7 @@ const SideBar = ({ show, handleClose }) => {
 							<span className="quantity-shop">
 								{product.productsInCart.quantity}
 							</span>
-							<div className="align-self-end"  >
+							<div className="align-self-end">
 								<small>Total:</small>{" "}
 								<span className="font-weight price-product">
 									$ {product.price * product.productsInCart.quantity}
@@ -49,9 +52,21 @@ const SideBar = ({ show, handleClose }) => {
 				<div className="total-product px-3">
 					<div className="d-flex justify-content-between mb-3 pt-5 border-top">
 						<span>Total:</span>
-						<span className="text-price">$ 345345</span>
+						<span className="text-price">
+							${" "}
+							{cart.reduce(
+								(acc, elem) =>
+									acc + Number(elem.price * elem.productsInCart.quantity),
+								0
+							)}
+						</span>
 					</div>
-					<Button className="w-100" >Checkout</Button>
+					<Button
+						onClick={() => dispatch(checkoutCartThunk())}
+						className="w-100"
+					>
+						Checkout
+					</Button>
 				</div>
 			</Offcanvas.Body>
 		</Offcanvas>

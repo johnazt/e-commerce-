@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { Button, Card, Carousel, Col, ListGroup, Row } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Button, Card, Carousel, Col, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import CircleIcon from "@mui/icons-material/Circle";
-import { countMinus, countPlus } from "../store/slices/countProduct.slice";
 import LocalGroceryStoreIcon from "@mui/icons-material/LocalGroceryStore";
+import { postProductCartThunk } from "../store/slices/cart.slice";
 
 const Product = () => {
 	const { id } = useParams();
@@ -12,11 +12,23 @@ const Product = () => {
 	const navigate = useNavigate();
 	const products = useSelector(state => state.products);
 	const productId = products.find(elem => elem.id === Number(id));
-	const count = useSelector(state => state.countProduct);
+	const [count, setCount] = useState(1);
 
 	const productsCategoryFilter = products.filter(product => {
 		return productId.category.id === product.category.id;
 	});
+
+	useEffect(() => {
+		setCount(1);
+	}, [id]);
+
+	const addProduct = () => {
+		const product = {
+			id: id,
+			quantity: count,
+		};
+		dispatch(postProductCartThunk(product));
+	};
 
 	return (
 		<div>
@@ -56,20 +68,20 @@ const Product = () => {
 							<div className="font-weight">Quantity</div>
 							<button
 								className="btn-product-detail"
-								onClick={() => dispatch(countMinus())}
+								onClick={() => setCount(count - 1)}
 							>
 								-
 							</button>
 							<span className="mx-4">{count}</span>
 							<button
 								className="btn-product-detail"
-								onClick={() => dispatch(countPlus())}
+								onClick={() => setCount(count + 1)}
 							>
 								+
 							</button>
 						</div>
 					</div>
-					<Button>Add to cart</Button>
+					<Button onClick={addProduct}>Add to cart</Button>
 				</Col>
 			</Row>
 
