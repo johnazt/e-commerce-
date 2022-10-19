@@ -13,8 +13,6 @@ const SideBar = ({ show, handleClose }) => {
 		dispatch(getCartThunk());
 	}, []);
 
-	// console.log(cart)
-
 	return (
 		<Offcanvas show={show} onHide={handleClose} placement="end">
 			<Offcanvas.Header closeButton>
