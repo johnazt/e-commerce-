@@ -18,7 +18,7 @@ export const getCartThunk = () => async dispatch => {
 	try {
 		try {
 			const res = await axios
-				.get("https://ecommerce-api-react.herokuapp.com/api/v1/cart", getConfig());
+				.get("https://e-commerce-api.academlo.tech/api/v1/cart", getConfig());
 			return dispatch(setCart(res.data.data.cart.products));
 		} catch (error) {
 			if (error.response.status === 404) {
@@ -36,7 +36,7 @@ export const postProductCartThunk = product => async dispatch => {
 		try {
 			await axios
 				.post(
-					"https://ecommerce-api-react.herokuapp.com/api/v1/cart",
+					"https://e-commerce-api.academlo.tech/api/v1/cart",
 					product,
 					getConfig()
 				);
@@ -54,7 +54,7 @@ export const checkoutCartThunk = () => async dispatch => {
 	try {
 		await axios
 			.post(
-				"https://ecommerce-api-react.herokuapp.com/api/v1/purchases",
+				"https://e-commerce-api.academlo.tech/api/v1/purchases",
 				{},
 				getConfig()
 			);
@@ -70,7 +70,7 @@ export const deleteProductCartThunk = id => async dispatch => {
 		try {
 			await axios
 				.delete(
-					`https://ecommerce-api-react.herokuapp.com/api/v1/cart/${id}`,
+					`https://e-commerce-api.academlo.tech/api/v1/cart/${id}`,
 					getConfig()
 				);
 			return dispatch(getCartThunk());

@@ -28,7 +28,7 @@ const Home = () => {
 	useEffect(() => {
 		axios
 			.get(
-				"https://ecommerce-api-react.herokuapp.com/api/v1/products/categories"
+				"https://e-commerce-api.academlo.tech/api/v1/products/categories"
 			)
 			.then(res => setCategory(res.data.data.categories));
 	}, []);
@@ -45,14 +45,13 @@ const Home = () => {
 	};
 
 	useEffect(() => {
-		// const searchCoincidence = () => {
 		const filterProducts = products.filter(product =>
 			product.title.toLowerCase().includes(input.toLowerCase())
 		);
 		setFilterProduct(filterProducts);
-		// };
 	}, [input]);
 
+	// console.log(filterProducts)
 	return (
 		<Row className="gap-5">
 			<Col lg={2}>
@@ -97,7 +96,6 @@ const Home = () => {
 						/>
 					</InputGroup>
 				</Row>
-
 				<Row xs={1} sm={2} md={3} xl={3} className="g-5 my-5 ">
 					{filterProduct.map(product => (
 						<Col key={product.id} className="md-4">
@@ -106,7 +104,7 @@ const Home = () => {
 								<Card.Img
 									variant="top"
 									className="img-thumbnail p-5 card-product__img"
-									src={product.productImgs}
+									src={product.productImgs[0]}
 									onLoad={() => setLoaderImg(true)}
 									onClick={() => navigate(`/shop/${product.id}`)}
 								/>

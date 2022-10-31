@@ -105,7 +105,7 @@ const Product = () => {
 							<Card.Img
 								variant="top"
 								className="img-thumbnail p-3 card-product__img"
-								src={item.productImgs}
+								src={item.productImgs[0]}
 							/>
 
 							<Card.Body className="pb-0">
