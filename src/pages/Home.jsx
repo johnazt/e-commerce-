@@ -104,7 +104,7 @@ const Home = () => {
 								<Card.Img
 									variant="top"
 									className="img-thumbnail p-5 card-product__img"
-									src={product.productImgs[0]}
+									src={product?.productImgs[0]}
 									onLoad={() => setLoaderImg(true)}
 									onClick={() => navigate(`/shop/${product.id}`)}
 								/>
