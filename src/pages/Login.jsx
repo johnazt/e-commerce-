@@ -13,7 +13,7 @@ const Login = () => {
 	const submit = data => {
 		axios
 			.post(
-				"https://e-commerce-api.academlo.tech/api/v1/users/login",
+				"https://e-commerce-api.academlo.tech/api/v1/users/login/",
 				data
 			)
 			.then(res => {
@@ -36,10 +36,10 @@ const Login = () => {
 					<div className="test-data">
 						<h5>Test Data</h5>
 						<div className="test-data-email">
-							<EmailIcon /> janz@gmail.com
+							<EmailIcon /> arca@gmail.com
 						</div>
 						<div className="test-data-password">
-							<KeyIcon /> janz123
+							<KeyIcon /> pass123
 						</div>
 					</div>
 					<Form onSubmit={handleSubmit(submit)}>
