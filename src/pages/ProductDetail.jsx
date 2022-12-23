@@ -76,7 +76,7 @@ const Product = () => {
 							<div className="font-weight text-lg-start text-end">Quantity</div>
 							<button
 								className="btn-product-detail btn-count"
-								onClick={() => setCount(count - 1)}
+								onClick={() => count > 0 && setCount(count - 1)}
 							>
 								-
 							</button>
