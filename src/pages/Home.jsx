@@ -28,7 +28,7 @@ const Home = () => {
 	useEffect(() => {
 		axios
 			.get(
-				"https://e-commerce-api.academlo.tech/api/v1/products/categories"
+				"https://e-commerce-api.academlo.tech/api/v1/products/categories/"
 			)
 			.then(res => setCategory(res.data.data.categories));
 	}, []);
